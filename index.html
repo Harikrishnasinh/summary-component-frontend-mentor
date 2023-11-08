@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,500;0,800;1,700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,400;0,700;1,700&display=swap"
+    rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Results summary component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      /* overflow: hidden; */
+      font-family: 'Hanken Grotesk', sans-serif;
+    }
+
+    body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+body {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+    .main_div {
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .main_inner_div {
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .top {
+      height: 48vh;
+      width: 100%;
+      display: flex;
+      gap: 1rem;
+      flex-direction: column;
+      color: whitesmoke;
+      align-items: center;
+      padding: 20px 0px;
+      justify-content: center;
+      border-bottom-left-radius: 25px;
+      border-bottom-right-radius: 25px;
+      background: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+    }
+
+    .flex-col {
+      display: flex;
+      flex-direction: column;
+      color: whitesmoke;
+      align-items: center;
+      justify-content: center;
+    }
+    .flex {
+      display: flex;
+      /* flex-direction: column; */
+      /* color: whitesmoke; */
+      align-items: center;
+      justify-content: space-around;
+    }
+    .circle {
+      background: linear-gradient(hsla(256, 72%, 46%, 1), hsla(241, 72%, 46%, 0));
+      padding: 20px 33px;
+      border-radius: 50%;
+    }
+
+    .cir76 {
+      font-size: xx-large;
+    }
+
+    .circle small {
+      font-size: x-small;
+      color: hsl(221, 100%, 96%, 0.5);
+      font-weight: bold;
+    }
+
+    .great {
+      /* background-color: ; */
+      padding: 0px 40px;
+    }
+
+    .great_p {
+      font-size: small;
+      text-align: center;
+      padding-top: 10px;
+      color: hsl(241, 100%, 89%);
+    }
+    .bottom{
+      /* background-color: red; */
+      height: 52vh;
+      width: 100%;
+      padding: 20px;
+      text-transform: capitalize;
+      font-size: 18px;
+    }
+    .width-100{
+      width: 100%;
+
+      padding: 12px 0px;
+      margin: 10px 0px;
+      border-radius: 7px;
+    }
+    .space-betweeen{
+      /* justify-content: space-around; */
+      /* width: 50%; */
+      gap: 1rem;
+      /* gap: 20px; */
+      /* background-color: antiquewhite; */
+    }
+    .react{
+      background-color:  hsl(0, 100%, 67%,0.1);
+
+    }
+    .reaction_div h5{
+      color:  hsl(0, 100%, 67%);
+    }
+    .prac100{
+      color: hsl(224, 30%, 27%,0.4);
+    }
+    .prac80{
+      color: hsl(224, 30%, 27%);
+    }
+    .mem{
+      background-color:  hsl(39, 100%, 56%,0.1);
+    }
+    .mem .reaction_div h5{
+      color:  hsl(39, 100%, 56%);
+    }
+    .ver{
+      background-color:  hsl(166, 100%, 37%,0.1);
+    }
+    .var .reaction_div h5{
+      color:  hsl(166, 100%, 37%);
+    }
+    .vis{
+      background-color: hsl(234, 85%, 45%,0.1);
+    }
+    .vis .reaction_div h5{
+      color: hsl(234, 85%, 45%);
+    }
+    .bottom button{
+      background-color: hsl(224, 30%, 27%);
+      width: 100%;
+      padding: 12px;
+      border-radius: 19px;
+      border: none;
+      color: whitesmoke;
+      margin-bottom: 17px;
+    }
+    @media only screen and (min-width: 768px) {
+  .main_div {
+    /* width: 50vw !important; */
+    /* height: auto; */
+    align-items: center;
+    /* display: flex; */
+    /* flex-direction: row; */
+  }
+  .main_inner_div{
+    /* border: 1px solid red; */
+    box-shadow: 1px 1px 10px 5px hsl(224, 30%, 27%,.1);
+    width: 40vw;
+    padding: 0;
+    margin: 0;
+    height: auto;
+    flex-direction: row;
+    border-radius: 25px;
+
+  }
+  .top{
+    border-radius: 25px;
+    width: 100%;
+    height: 52vh;
+    /* padding: 0; */
+    /* margin: 0; */
+  }
+  .nvoclass{
+    padding: 16px;
+    gap: 2rem;
+  }
+  .bottom{
+    /* background-color: red; */
+    /* margin: 0;
+    padding: 0; */
+
+  }
+}
+  </style>
+</head>
+
+<body>
+
+  <div class="main_div">
+    <div class="main_inner_div">
+      <div class="top">
+        <div>
+          <p style="color: hsl(241, 100%, 89%); font-weight: 500;">
+            Your Results
+          </p>
+        </div>
+        <div class="flex-col circle">
+          <div>
+            <h1>76</h1>
+          </div>
+          <div>
+            <small>of 100</small>
+          </div>
+        </div>
+        <div class="flex-col great">
+          <div>
+            <h3 class="great_h3">Great</h3>
+          </div>
+          <div>
+            <p class="great_p">Your scored higher than 65% of the people who have taken these tests.</p>
+          </div>
+        </div>
+      </div>
+      <div class="bottom">
+        <div>
+          <div>
+            <h4>summary</h4>
+          </div>
+        </div>
+        <div class="nvoclass">
+          <div class="flex width-100 react">
+            <div class="flex space-betweeen reaction_div">
+              <img src="assets/images/icon-reaction.svg" alt="icon-reaction">
+              <h5>
+                Reaction
+              </h5>
+            </div>
+            <div>
+             
+            </div>
+            <div>
+              <h5 class="prac80">
+                80&nbsp;&nbsp;<span class="prac100">/&nbsp;&nbsp;100</span>
+              </h5>
+            </div>
+          </div>
+          <!-- memory -->
+          <div class="flex width-100 mem">
+            <div class="flex space-betweeen reaction_div">
+              <img src="assets/images/icon-memory.svg" alt="icon-reaction">
+              <h5>
+                Memory
+              </h5>
+            </div>
+            <div>
+             
+            </div>
+            <div>
+              <h5 class="prac80">
+                92&nbsp;&nbsp;<span class="prac100">/&nbsp;&nbsp;100</span>
+              </h5>
+            </div>
+          </div>
+          <!-- verbal -->
+          <div class="flex width-100 ver">
+            <div class="flex space-betweeen reaction_div">
+              <img src="assets/images/icon-verbal.svg" alt="icon-reaction">
+              <h5>
+                verbal
+              </h5>
+            </div>
+            <div>
+             
+            </div>
+            <div>
+              <h5 class="prac80">
+                61&nbsp;&nbsp;<span class="prac100">/&nbsp;&nbsp;100</span>
+              </h5>
+            </div>
+          </div>
+          <!-- visual -->
+          <div class="flex width-100 vis">
+            <div class="flex space-betweeen reaction_div">
+              <img src="assets/images/icon-visual.svg" alt="icon-reaction">
+              <h5>
+                visual
+              </h5>
+            </div>
+            <div>
+             
+            </div>
+            <div>
+              <h5 class="prac80">
+                72&nbsp;&nbsp;<span class="prac100">/&nbsp;&nbsp;100</span>
+              </h5>
+            </div>
+          </div>
+        </div>
+        <div>
+          <button>
+            Continue
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
